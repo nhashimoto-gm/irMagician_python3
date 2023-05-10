@@ -78,9 +78,9 @@ def saveIR(path):
         bank = n / 64
         pos = n % 64
         if (pos == 0):
-            ir_serial.write("b,%d\r\n" % bank)
+            ir_serial.write("b,%d\r\n".encode() % bank)
 
-        ir_serial.write("d,%d\n\r" % pos)
+        ir_serial.write("d,%d\n\r".encode() % pos)
         xStr = ir_serial.read(3)
         xData = int(xStr, 16)
         rawX.append(xData)
